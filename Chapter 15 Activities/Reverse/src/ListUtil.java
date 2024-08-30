@@ -14,13 +14,47 @@ public class ListUtil
     public static void reverse(LinkedList<String> strings)
     {
         ListIterator<String> iterator = strings.listIterator();
-        String n = iterator.next(); String m = iterator.previous();
-        strings.addLast(strings.removeFirst());
-        while (!(n.equals(m))) {
-            System.out.println("n" + n + "  m" + m);
+        String n ="", m = "";
+
+       
+        m = iterator.next();
+      
+        iterator = strings.listIterator();
+
+        //System.out.println(strings.remove());
+       // strings.addLast(strings.removeFirst());
+        
+       while (!(n.equals(m))) {
             
+           //// System.out.println("n: " + n + "   m: " + m);
+        //   iterator.next()
+          //  System.out.println
             n = iterator.next();
-            strings.addLast(strings.removeFirst());
+            iterator.remove();
+             strings.addFirst(n);
+             //iterator = strings.listIterator();
+             
+             //System.out.println(n);
+            // n = iterator.next();
+            // n = iterator.next();
+            // System.out.println(n);
+             
+            // System.out.println(n);
+             
+             
+            // n = iterator.next();
+            // iterator = strings.listIterator();
+
+             
+            
+
+             System.out.println(strings);
+             
+             
+
+
+            //strings.addLast(strings.removeFirst());
+          ///  System.out.println(strings);
             
         }
 

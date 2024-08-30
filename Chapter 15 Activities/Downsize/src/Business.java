@@ -20,7 +20,7 @@ public class Business
 
 
        while (iterator.hasNext()){
-          count+=1;
+          count++;
           iterator.next();
           if (count % n == 0){
             iterator.remove();

@@ -13,50 +13,31 @@ public class ListUtil
     */
     public static void reverse(LinkedList<String> strings)
     {
-        ListIterator<String> iterator = strings.listIterator();
-        String n ="", m = "";
-
-       
-        m = iterator.next();
-      
-        iterator = strings.listIterator();
-
-        //System.out.println(strings.remove());
-       // strings.addLast(strings.removeFirst());
+        LinkedList<String> strings2 = strings;
+        ListIterator<String> iterator1 = strings2.listIterator();
+        ListIterator<String> iterator2 = strings.listIterator();
+        String temp = "", first;
+        int count=0;
         
-       while (!(n.equals(m))) {
-            
-           //// System.out.println("n: " + n + "   m: " + m);
-        //   iterator.next()
-          //  System.out.println
-            n = iterator.next();
-            iterator.remove();
-             strings.addFirst(n);
-             //iterator = strings.listIterator();
-             
-             //System.out.println(n);
-            // n = iterator.next();
-            // n = iterator.next();
-            // System.out.println(n);
-             
-            // System.out.println(n);
-             
-             
-            // n = iterator.next();
-            // iterator = strings.listIterator();
+         while(iterator1.hasNext()/*(!temp.equals(first))*/ ){
+          count++;
+         
+          temp = iterator2.next();
+         
+          iterator2.remove();
 
-             
-            
+          strings.addFirst(temp);
+          
+          iterator2 = strings.listIterator();
 
-             System.out.println(strings);
-             
-             
+          System.out.println(strings);
+          for (int i = 0; i < count; i++)
+            iterator2.next();
+          if (count > 50)
+            break;
+         }
 
-
-            //strings.addLast(strings.removeFirst());
-          ///  System.out.println(strings);
             
         }
 
     }
-}

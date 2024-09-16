@@ -27,29 +27,29 @@ public class StringLengthMap
                 Integer len = word.length();
 
                 if (words.containsKey(len)){
-                    temp = words.get(len);
-                    words.put(len, temp+word+",");
+                    if (!words.get(len).contains(word+ ", ")){
+                    
+                        temp = words.get(len);
+                        words.put(len, temp+word+", ");
+                    }
                 }else {
-                    words.put(len, word+",");
+                    words.put(len, word+", ");
                 }
-
-                // Update the map here
-                // Modify Worked Example 15.1
-                
 
 
             }
-
             // Print the strings, in increasing order of their length
             // Use this format: 1: i, a, i
            
             for (int i=0, j=0; i < words.size(); j++) {
                 
                 if (words.containsKey(j)){
+                   
                     i++;
                     System.out.println(j + ": " + words.get(j));
+                    }
                 }
-            }
+            
 
         } catch (FileNotFoundException e)
         {

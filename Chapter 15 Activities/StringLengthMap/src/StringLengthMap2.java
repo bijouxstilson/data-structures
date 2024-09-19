@@ -26,7 +26,12 @@ public class StringLengthMap2
                 String word = clean(in.next());
                 Integer len = word.length();
 
-                words.merge(len, word+", ", (oldValue, newValue) -> words.put(len, words.get(len)+word+", "));
+                words.merge(len, word+", ", (oldValue, newValue) -> 
+                            {
+                                words.put(len, words.get(len)+word+", ")
+                                return words;
+                                }
+                           );
                 // Update the map here
                 // Use the Java 8 merge() method
     

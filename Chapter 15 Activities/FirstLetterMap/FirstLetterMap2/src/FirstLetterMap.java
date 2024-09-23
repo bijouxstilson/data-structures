@@ -18,21 +18,22 @@ public class FirstLetterMap
         {
 
             Map<Character, String> words = new HashMap<>();
-            String temp;
 
             while (in.hasNext())
             {
                 String word = clean(in.next());
                 Character c = word.charAt(0);
 
-                if (words.containsKey(c)){
-                    temp = words.get(c);
-                    words.put(c, temp+word+",");
-                }else {
-                    words.put(c, word+",");
-                }
 
-
+                words.merge(c, word+ ",", (oldValue, newValue) -> 
+                    {
+                        if(!(oldValue.contains(word + ",") || oldValue.contains("," +word + ",")))
+                            return oldValue +newValue;
+                        return oldValue;
+                    }
+                );
+                // Update the map here
+                // Use the Java 8 merge() method
             }
 
             // Print the map here in this form

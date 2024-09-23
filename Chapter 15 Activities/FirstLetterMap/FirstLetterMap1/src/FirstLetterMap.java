@@ -27,7 +27,8 @@ public class FirstLetterMap
 
                 if (words.containsKey(c)){
                     temp = words.get(c);
-                    words.put(c, temp+word+",");
+                    if (!(temp.contains(word + ",") || temp.contains("," +word + ",")))
+                        words.put(c, temp+word+",");
                 }else {
                     words.put(c, word+",");
                 }
@@ -42,7 +43,7 @@ public class FirstLetterMap
                 
                 if (words.containsKey(j)){
                     i++;
-                    System.out.println(j + ": " + words.get(j));
+                    System.out.println(j + "= " + words.get(j));
                 }
             }
 

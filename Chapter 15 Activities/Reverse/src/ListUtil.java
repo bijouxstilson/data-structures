@@ -14,7 +14,8 @@ public class ListUtil
     {
         ListIterator<String> iterator = strings.listIterator();
         String temp = ""; int count=1;
-        
+        iterator.next();
+
         while(iterator.hasNext()){
           count++;
          

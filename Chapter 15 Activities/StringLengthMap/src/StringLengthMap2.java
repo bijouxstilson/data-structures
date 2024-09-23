@@ -26,17 +26,14 @@ public class StringLengthMap2
                 String word = clean(in.next());
                 Integer len = word.length();
 
-                if ((!word.equals(" ")))
-                words.merge(len, word+", ", (oldValue, newValue) -> 
-                            {
-                                if (!words.get(len).equals(word+ ", ")){
-                                 return /*words.put(len, words.get(len)+word+", "*/ oldValue + newValue;
+               
+                words.merge(len, word+ ",", (oldValue, newValue) -> 
+                                {
+                                    if(!(oldValue.contains(word + ",") || oldValue.contains("," +word + ",")))
+                                        return oldValue +newValue;
+                                    return oldValue;
                                 }
-                                else return "";
-
-                                }
-                                
-                           );
+                            );
                 // Update the map here
                 // Use the Java 8 merge() method
                             

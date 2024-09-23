@@ -1,26 +1,30 @@
 import java.util.PriorityQueue;
+import java.util.Queue;
 import java.util.Scanner;
 /**
- * Implement a to do list. Tasks have a priority between 
+ * Implement a to do list. Tasks have a priority between
  * 1 and 9 (with 1 being most urgent), and a description.
- * When the user enters the command 'add priority description', 
- * the program adds a new task. When the user enters next, 
- * the program removes and prints the most urgent task. 
- * The quit command quits the program. 
+ * When the user enters the command 'add priority description',
+ * the program adds a new task. When the user enters next,
+ * the program removes and prints the most urgent task.
+ * The quit command quits the program.
  * Use a priority queue in your solution.
 */
 public class ToDoList
 {
     // Instance variable(s)
-    . . .
+    Queue<Task> tasks = new PriorityQueue<>();
+    int num;
+    String answer;
+    Scanner in = new Scanner(System.in);
 
     /**
      * Constructor
     */
     public ToDoList()
     {
-        // Complete this
-        . . .
+       
+
     }
 
     /**
@@ -34,9 +38,10 @@ public class ToDoList
         System.out.println("     next (remove and print most urgent task)");
         System.out.println("     quit (exit this program)");
         System.out.println();
-        
+
         Scanner in = new Scanner(System.in);
-        
+
+               
         do
         {
             System.out.print("> ");
@@ -48,10 +53,11 @@ public class ToDoList
             {
                 nextTask();
             }
-        } 
+        }
         while (! option.equals("quit"));
+   
     }
-    
+   
     /**
      * Parse the add option line.
      *
@@ -59,10 +65,18 @@ public class ToDoList
     */
     public void addTask(String optionStr)
     {
+        //System.out.println("test");
         // Complete this method
-        . . .
-            
-            
+        /*num = in.nextInt();
+        answer = in.next();
+        tasks.add(new Task(num, answer));*/
+
+        num = Integer.parseInt(optionStr.substring(4, 5));
+
+        answer = optionStr.substring(5 );
+
+        tasks.add(new Task(num, answer));
+       
     }
 
     /**
@@ -72,11 +86,13 @@ public class ToDoList
     public void nextTask()
     {
         Task next = null;
-        
+       
         // Complete this method
-        . . .
-        
-        
+       
+        next = tasks.remove();
+        //System.out.println(next.getDescription());
+       
+       
         if (next == null)
         {
             System.out.println("There are no tasks in the list.");

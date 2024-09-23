@@ -6,6 +6,41 @@
     "configurations": [
         {
             "type": "java",
+            "name": "ToDoListDemo",
+            "request": "launch",
+            "mainClass": "ToDoListDemo",
+            "projectName": "data-structures_4311ff45"
+        },
+        {
+            "type": "java",
+            "name": "FirstLetterMap",
+            "request": "launch",
+            "mainClass": "FirstLetterMap",
+            "projectName": "data-structures_4311ff45"
+        },
+        {
+            "type": "java",
+            "name": "StringLengthMap2",
+            "request": "launch",
+            "mainClass": "StringLengthMap2",
+            "projectName": "data-structures_4311ff45"
+        },
+        {
+            "type": "java",
+            "name": "StringLengthMap",
+            "request": "launch",
+            "mainClass": "StringLengthMap",
+            "projectName": "data-structures_4311ff45"
+        },
+        {
+            "type": "java",
+            "name": "ReverseTester",
+            "request": "launch",
+            "mainClass": "ReverseTester",
+            "projectName": "data-structures_4311ff45"
+        },
+        {
+            "type": "java",
             "name": "Current File",
             "request": "launch",
             "mainClass": "${file}"

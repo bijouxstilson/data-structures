@@ -8,36 +8,27 @@ public class ListUtil
 {
     /**
      * Reverses the elements in a linked list
-     *
      * @param strings the linked list to reverse
     */
     public static void reverse(LinkedList<String> strings)
     {
-        LinkedList<String> strings2 = strings;
-        ListIterator<String> iterator1 = strings2.listIterator();
-        ListIterator<String> iterator2 = strings.listIterator();
-        String temp = "", first;
-        int count=0;
+        ListIterator<String> iterator = strings.listIterator();
+        String temp = ""; int count=1;
         
-         while(iterator1.hasNext()/*(!temp.equals(first))*/ ){
+        while(iterator.hasNext()){
           count++;
          
-          temp = iterator2.next();
+          temp = iterator.next();
          
-          iterator2.remove();
+          iterator.remove();
 
           strings.addFirst(temp);
           
-          iterator2 = strings.listIterator();
+          iterator = strings.listIterator();
 
-          System.out.println(strings);
           for (int i = 0; i < count; i++)
-            iterator2.next();
-          if (count > 50)
-            break;
+            temp = iterator.next();
+      
          }
-
-            
         }
-
     }

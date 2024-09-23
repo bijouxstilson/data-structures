@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "ReverseTester",
+            "request": "launch",
+            "mainClass": "ReverseTester",
+            "projectName": "data-structures_c5ffe8ad"
+        },
+        {
+            "type": "java",
             "name": "ToDoListDemo",
             "request": "launch",
             "mainClass": "ToDoListDemo",

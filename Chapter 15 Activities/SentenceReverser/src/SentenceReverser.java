@@ -15,59 +15,42 @@ public class SentenceReverser
     public static String reverse(String sentence)
     {
         Scanner scanner = new Scanner(sentence);
-        String word =" ", backwards ="";
+        String word =" ", backwards =""; String temp = "";
         
         // Complete this method. Use a Stack.
         Stack<String> reverser = new Stack<>();
 
         for (int i = 0; i < sentence.length(); i++)
         {
-            System.out.println((sentence.substring(i, i + 1)));
-
-            if (sentence.substring(i, i + 1).equals(",") ){
-                //word += sentence.substring(i, i + 1);
-                System.out.println(",,,,,,");
-                word = ", " + word;
-
-                reverser.push(word);
-                word = "";
-
-
-            }
-            else if (sentence.substring(i, i + 1).equals(" "))
+            if (sentence.substring(i, i + 1).equals(" "))
             {
-                System.out.println("-      -");
-             //   word += sentence.substring(i, i + 1);
-                reverser.push(word);
+              reverser.push(word.toLowerCase());
                 word = "";
 
             }
             else if (sentence.substring(i, i + 1).equals("."))
             {
-                System.out.println("......");
                 
-
-               System.out.println(reverser.size());
-                for (int j = 0; j < 4; j++){
-
-                    backwards += reverser.pop();
-                }
-                System.out.println("backwards: " +backwards);
-                reverser.push(word);
+                reverser.push(word.toLowerCase());
                 word = "";
+                for (int j = 0; j < reverser.size()+4; j++){
+                    temp = reverser.pop();
+                    if (j == 0){
+                        
+                        backwards += temp.substring(0,2).toUpperCase() + temp.substring(2);
+                    }
+                    else
+                       backwards += temp;
+
+                    if (j == reverser.size()+4)
+                        backwards += ".";
+                }
 
             }
-                //System.out.println("++++++");
-                word += sentence.substring(i, i + 1);
-                System.out.println("addword: "+word);
-            
+                word += sentence.substring(i, i + 1).toLowerCase();
             
             
         }
-
-
-
-
 
 
         return backwards;

@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "HTMLChecker",
+            "request": "launch",
+            "mainClass": "HTMLChecker",
+            "projectName": "data-structures_c5ffe8ad"
+        },
+        {
+            "type": "java",
             "name": "ReverseTester",
             "request": "launch",
             "mainClass": "ReverseTester",

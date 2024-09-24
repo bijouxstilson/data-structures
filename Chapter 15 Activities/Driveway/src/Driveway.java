@@ -7,24 +7,24 @@ import java.util.Scanner;
 */
 public class Driveway
 {
+    private int temp;
+    private Stack<Integer> printCars = new Stack<>();
     /**
       * Stack representing the cars in the driveway.
     */
-    private Stack<Integer> driveway;
+    private Stack<Integer> driveway = new Stack<>();
+    
     /**
       * Stack representing the cars in the street.
     */
-    private Stack<Integer> street;
+    private Stack<Integer> street = new Stack<>();
 
     /**
       * Constructor.
     */
     public Driveway()
     {
-        // Complete the constructor
-        ...
-
-
+       temp = 0;
     }
 
     /**
@@ -33,10 +33,15 @@ public class Driveway
       * @param licensePlate number of license plate.
     */
     public void add(int licensePlate)
-    {
-        // Complete this method
-        ...
+    {  if (!driveway.contains(licensePlate))
+          driveway.push(licensePlate);
 
+       System.out.print("Driveway: ");
+
+       for (int car: driveway){
+         System.out.print(car+" ");
+      }
+      System.out.println();
 
     }
 
@@ -47,10 +52,25 @@ public class Driveway
     */
     public void remove(int licensePlate)
     {
-        // Complete this method
-        ...
+        if (driveway.contains(licensePlate))
+          temp = driveway.pop();
 
+        while (temp!=licensePlate && driveway.contains(licensePlate)){
+          street.push(temp);
+          temp = driveway.pop();
+        }
+        
+        if (temp == licensePlate){
+          while(street.size()>0){
+            driveway.push(street.pop());
+          }
+        }
 
+        System.out.print("Driveway: ");
+        for (int car: driveway){
+           System.out.print(car+" ");
+        }
+        System.out.println();
     }
 
     /**
@@ -59,12 +79,22 @@ public class Driveway
     public void print()
     {
         System.out.println("In Driveway, starting at first in (one license plate per line):");
-        // Print the cars in the driveway here
-        ...
+        for (int i = driveway.size(); i >0; i--){
+          printCars.push(driveway.pop());
+        }
+        for (int i = printCars.size(); i >0; i--){
+          System.out.println(printCars.pop());
+        }
 
-        System.out.println("In Street, starting at first in (one license plate per line):");
-        // Print the cars in the street here
-        ...
 
+       System.out.println("In Street, starting at first in (one license plate per line):");
+        //Print the cars in the street here'
+        for (int i = street.size(); i >0; i--){
+          printCars.push(street.pop());
+        }
+        for (int i = street.size(); i >0; i--){
+          System.out.println(street.pop());
+        }
+       
     }
 }

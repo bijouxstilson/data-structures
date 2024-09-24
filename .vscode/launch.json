@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "DrivewayDemo",
+            "request": "launch",
+            "mainClass": "DrivewayDemo",
+            "projectName": "data-structures_4311ff45"
+        },
+        {
+            "type": "java",
             "name": "HTMLChecker",
             "request": "launch",
             "mainClass": "HTMLChecker",

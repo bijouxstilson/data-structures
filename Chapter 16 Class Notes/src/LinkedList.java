@@ -1,4 +1,6 @@
+import java.lang.classfile.components.ClassPrinter;
 import java.util.NoSuchElementException;
+
 
 /**
  * A linked list is a sequence of nodes with efficient
@@ -9,10 +11,17 @@ import java.util.NoSuchElementException;
 public class LinkedList
 {
 
+    private Node first; //refers to the first node in the list, if list is empty, list will be null
+
 
     /**
         Constructs an empty linked list.
     */
+    public LinkedList(){
+
+        this.first= null;
+    }
+
 
 
 
@@ -21,6 +30,10 @@ public class LinkedList
         Returns the first element in the linked list.
         @return the first element in the linked list
     */
+    public Object getFirst() {
+        if (this.first==null){ throw new NoSuchElementException(); }
+        return this.first.data; //if not .data, returns the node, not the actual data
+    }
 
 
 
@@ -29,7 +42,15 @@ public class LinkedList
         Removes the first element in the linked list.
         @return the removed element
     */
-
+    public Object removeFirst(){
+        if (this.first==null){ throw new NoSuchElementException(); }
+        
+        Object element = this.first.next;
+        this.first = this.first.next;
+        return element;
+    }
+    
+          
 
 
 
@@ -38,6 +59,15 @@ public class LinkedList
         Adds an element to the front of the linked list.
         @param element the element to add
     */
+    public void addFirst(Object element){
+        Node newNode = new Node();
+        newNode.data = element;
+        newNode.next = this.first;
+        this.first = newNode;
+        //this.first = new Node();
+        
+
+    }
 
 
 
@@ -47,15 +77,25 @@ public class LinkedList
         Returns an iterator for iterating through this list.
         @return an iterator for iterating through this list
     */
+    public ListIterator listIterator(){
+        return new ListIterator();
+    }
 
 
 
 
 
     //Class Node
+    //node is static because it doesn't need access to anything in LinkedList
+    static class Node {
+        public Node next; 
+        public Object data;
+        
+
+    }
 
 
-    class LinkedListIterator //implements ListIterator
+    class LinkedListIterator implements ListIterator
     {
       //private data
 

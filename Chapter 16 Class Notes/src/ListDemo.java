@@ -1,12 +1,21 @@
-import java.util.LinkedList;
-import java.util.ListIterator;
+//import java.util.LinkedList;
+//import java.util.ListIterator;
 /**
  *   A program that demonstrates the LinkedList class
  */
 public class ListDemo
 {
     public static void main(String[] args)
-    {
+    {   LinkedList students = new LinkedList();
+
+        students.addFirst ("Arthur");
+        students.addFirst("Bijoux");
+        students.addFirst("Jinan");
+        students.addFirst("Andy");
+
+        System.out.println(students);
+        
+        /* 
         //addLast method can be used to populate a list
         LinkedList<String> staff = new LinkedList<>();
         staff.addLast("Tony");
@@ -21,7 +30,7 @@ public class ListDemo
         /*
          * the listIterator method creates a new list iterator that is positined at the head of the list
          * the | is used to represent iterator position
-         */
+        
         ListIterator<String> iterator = staff.listIterator(); //  |TNPG
         
         //the next method advances the iterator over the next element in the list
@@ -95,6 +104,6 @@ public class ListDemo
             }
         }
 
-        System.out.println(staff);
+        System.out.println(staff);*/
     }
 }

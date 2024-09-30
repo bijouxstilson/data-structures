@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "SizeTester",
+            "request": "launch",
+            "mainClass": "SizeTester",
+            "projectName": "data-structures_c5ffe8ad"
+        },
+        {
+            "type": "java",
             "name": "DrivewayDemo",
             "request": "launch",
             "mainClass": "DrivewayDemo",

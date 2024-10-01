@@ -24,7 +24,13 @@ public class LinkedList
     */
     public int size()
     {
-        . . .
+        ListIterator iterator = listIterator();
+        int count = 0;
+        while (iterator.hasNext()){
+            count++;
+            iterator.next();
+        }
+        return count;
     }
 
     /**

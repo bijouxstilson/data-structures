@@ -9,6 +9,13 @@
             "name": "SizeTester",
             "request": "launch",
             "mainClass": "SizeTester",
+            "projectName": "data-structures_4311ff45"
+        },
+        {
+            "type": "java",
+            "name": "SizeTester",
+            "request": "launch",
+            "mainClass": "SizeTester",
             "projectName": "data-structures_c5ffe8ad"
         },
         {

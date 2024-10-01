@@ -34,7 +34,7 @@ public class LinkedList
         if (start.next!=null){
             return (1+size(start.next));
         }
-        else return 0;
+        else return 1;
         
     }
 

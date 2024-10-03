@@ -22,8 +22,7 @@ public class LinkedListQueue
         Moves the head of the queue to the tail.
     */
     public void firstToLast()
-    {
-        . . .
+    {   //...
 
 
 

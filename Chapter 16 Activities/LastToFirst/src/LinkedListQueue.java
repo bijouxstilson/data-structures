@@ -22,8 +22,13 @@ public class LinkedListQueue
     */
     public void lastToFirst()
     {
-        . . .
-
+        Node tempTail =this.tail;
+        boolean start = true;
+        while ((tempTail.data != head.data) || start){
+            start = false;
+            add(remove());
+            //tempTail = tail;
+        }
 
 
 

@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "ListTester",
+            "request": "launch",
+            "mainClass": "ListTester",
+            "projectName": "data-structures_4311ff45"
+        },
+        {
+            "type": "java",
             "name": "QueueTester",
             "request": "launch",
             "mainClass": "QueueTester",

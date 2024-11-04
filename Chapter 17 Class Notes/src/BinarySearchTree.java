@@ -1,4 +1,5 @@
 
+import com.sun.source.tree.LabeledStatementTree;
 import java.lang.classfile.components.ClassPrinter;
 import java.util.logging.ErrorManager;
 
@@ -108,18 +109,43 @@ public class BinarySearchTree
                 if (parent == null){
                     this.root = newChild;
                 }
-                else if (parent.left){
-                    
+                else{
+                    parent.right = newChild;
                 }
+                return; 
             }
+            //case 3: remove a node with two children
+            //the lowest element will replace the removed node
+
+            //find the lowest element of the right subtree
+            Node lowestParent = toBeRemoved;
+            Node lowest = toBeRemoved.right;
+            while (lowest.left != null) {
+                lowestParent = lowest;
+                lowest = lowest.left;
+            }
+
+            //move the data to the node being removed
+            toBeRemoved.data = lowest.data;
+            
+            //unlink the lowest child
+            if (lowestParent == toBeRemoved) {
+                lowestParent.right = lowest.right;
+            }
+            else {
+                lowestParent.left = lowest.right;
+            }
+
+
     }
     
     /**
         Prints the contents of the tree in sorted order.
     */
     public void print()
-    {   
-        
+    {   //print the tree using in-order traversal
+        print(this.root);
+        System.out.println();
     }   
 
     /**
@@ -128,6 +154,13 @@ public class BinarySearchTree
     */
     private static void print(Node parent)
     {   
+        if (parent == null){
+            return;
+        }
+        
+        print(parent.left);
+        System.out.println(parent.data + " ");
+        print(parent.right);
         
     }
 
